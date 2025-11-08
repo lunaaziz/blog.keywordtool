@@ -1,6 +1,6 @@
 # Keyword Tool Blog
 
-A modern, Notion-style blog built with **Tailwind CSS** and **DaisyUI** components.
+A modern, clean blog built with **Tailwind CSS** and **DaisyUI** components.
 
 ## 🌐 Live Demo
 
@@ -8,7 +8,7 @@ A modern, Notion-style blog built with **Tailwind CSS** and **DaisyUI** componen
 
 ## ✨ Features
 
-- ✅ **Notion-inspired Design** - Clean, minimal, magazine-style layout
+- ✅ **Modern Design** - Clean, minimal, magazine-style layout
 - ✅ **100% DaisyUI Components** - All UI built with DaisyUI
 - ✅ **Fully Responsive** - Perfect on mobile, tablet, and desktop
 - ✅ **Dark/Light Theme** - Toggle with localStorage persistence
@@ -17,15 +17,6 @@ A modern, Notion-style blog built with **Tailwind CSS** and **DaisyUI** componen
 - ✅ **No Build Process** - Pure HTML/CSS/JS, works instantly
 - ✅ **Easy Content Management** - Edit one file to add articles
 - ✅ **SEO Optimized** - Semantic HTML and meta tags
-
-## 🎨 Design Inspiration
-
-Inspired by [Notion.com Blog](https://www.notion.com/blog) with:
-- Large featured images
-- Generous white space
-- Minimal text on cards
-- Clean typography
-- Subtle animations
 
 ## 📦 Tech Stack
 
@@ -81,7 +72,7 @@ All articles are in one file: `data/articles.js`
 
 ```
 blog.keywordtool/
-├── index.html              # Homepage (Notion-style)
+├── index.html              # Homepage
 ├── article.html            # Article detail page
 ├── categories.html         # Categories page
 ├── about.html             # About page
@@ -173,7 +164,6 @@ Free to use for personal and commercial projects.
 
 ## 🙏 Credits
 
-- Design inspiration: [Notion.com](https://www.notion.com/blog)
 - UI Components: [DaisyUI](https://daisyui.com/)
 - CSS Framework: [Tailwind CSS](https://tailwindcss.com/)
 - Icons: [Font Awesome](https://fontawesome.com/)
