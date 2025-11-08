@@ -43,14 +43,19 @@ function loadArticle() {
     // Update page title
     document.getElementById('page-title').textContent = article.title + ' - Keyword Tool Blog';
     
-    // Update breadcrumbs
-    document.getElementById('breadcrumb-category').textContent = article.category;
-    document.getElementById('breadcrumb-title').textContent = article.title.substring(0, 30) + '...';
+    // Update breadcrumbs (if they exist)
+    const breadcrumbCategory = document.getElementById('breadcrumb-category');
+    const breadcrumbTitle = document.getElementById('breadcrumb-title');
+    if (breadcrumbCategory) breadcrumbCategory.textContent = article.category;
+    if (breadcrumbTitle) breadcrumbTitle.textContent = article.title.substring(0, 30) + '...';
     
     // Update article meta
     document.getElementById('article-category').textContent = article.category;
-    document.getElementById('article-read-time').textContent = article.readTime;
-    document.getElementById('article-read-time-2').textContent = article.readTime;
+    
+    const readTime1 = document.getElementById('article-read-time');
+    const readTime2 = document.getElementById('article-read-time-2');
+    if (readTime1) readTime1.textContent = article.readTime;
+    if (readTime2) readTime2.textContent = article.readTime;
     
     // Update article header
     document.getElementById('article-title').textContent = article.title;
