@@ -13,7 +13,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -21,156 +21,221 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
         }
+        
+        /* Medium-style article typography */
         .article-content {
-            font-family: 'Merriweather', serif;
+            font-family: 'Lora', serif;
+            font-size: 20px;
+            line-height: 1.75;
+            color: #242424;
         }
+        
         .article-content h2 {
             font-family: 'Inter', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-top: 2em;
+            margin-bottom: 0.75em;
+            color: #242424;
+        }
+        
+        .article-content h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 22px;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-top: 1.75em;
+            margin-bottom: 0.5em;
+            color: #242424;
+        }
+        
+        .article-content p {
+            margin-bottom: 1.5em;
+            color: #242424;
+        }
+        
+        .article-content a {
+            color: inherit;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+        
+        .article-content strong {
+            font-weight: 600;
+            color: #242424;
+        }
+        
+        .article-content blockquote {
+            border-left: 3px solid #242424;
+            padding-left: 1.5em;
+            margin: 2em 0;
+            font-style: italic;
+            color: #6B6B6B;
+        }
+        
+        .article-content ul,
+        .article-content ol {
+            margin: 1.5em 0;
+            padding-left: 1.5em;
+        }
+        
+        .article-content li {
+            margin-bottom: 0.5em;
+        }
+        
+        .article-content img {
+            width: 100%;
+            height: auto;
+            margin: 2em 0;
+            border-radius: 4px;
+        }
+        
+        .article-content pre {
+            background: #F7F7F7;
+            padding: 1.5em;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin: 2em 0;
+        }
+        
+        .article-content code {
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9em;
+            background: #F7F7F7;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
         }
     </style>
 </head>
-<body>
+<body class="bg-white">
     
-    <!-- Navigation -->
-    <div class="navbar bg-base-100 shadow-sm sticky top-0 z-50 border-b border-base-200">
-        <div class="navbar-start">
-            <div class="dropdown">
-                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
-                    </svg>
-                </div>
-                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="categories.html">Topics</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+    <!-- Minimal Navigation -->
+    <div class="navbar bg-white border-b border-base-200 sticky top-0 z-50">
+        <div class="container mx-auto max-w-5xl px-6">
+            <div class="navbar-start">
+                <a href="index.html" class="text-2xl font-bold text-base-content">
+                    Keyword Tool
+                </a>
             </div>
-            <a href="index.html" class="btn btn-ghost text-xl font-bold">
-                <i class="fas fa-key text-primary"></i>
-                Keyword Tool Blog
-            </a>
-        </div>
-        <div class="navbar-center hidden lg:flex">
-            <ul class="menu menu-horizontal px-1">
-                <li><a href="index.html" class="font-medium">Home</a></li>
-                <li><a href="categories.html" class="font-medium">Topics</a></li>
-                <li><a href="about.html" class="font-medium">About</a></li>
-                <li><a href="contact.html" class="font-medium">Contact</a></li>
-            </ul>
-        </div>
-        <div class="navbar-end">
-            <button class="btn btn-ghost btn-circle" onclick="search_modal.showModal()">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-            </button>
-            <label class="swap swap-rotate btn btn-ghost btn-circle">
-                <input type="checkbox" id="theme-toggle" />
-                <svg class="swap-on fill-current w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"/></svg>
-                <svg class="swap-off fill-current w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"/></svg>
-            </label>
-        </div>
-    </div>
-
-    <!-- Breadcrumbs -->
-    <div class="bg-base-200 py-4">
-        <div class="container mx-auto px-4 max-w-5xl">
-            <div class="text-sm breadcrumbs">
-                <ul id="breadcrumbs">
-                    <li><a href="index.html">Home</a></li>
-                    <li id="breadcrumb-category">Category</li>
-                    <li id="breadcrumb-title">Article</li>
-                </ul>
+            <div class="navbar-end gap-2">
+                <a href="index.html" class="btn btn-ghost btn-sm">
+                    <i class="fas fa-arrow-left mr-2"></i>
+                    Back to blog
+                </a>
             </div>
         </div>
     </div>
 
-    <!-- Article Header -->
-    <article class="py-12">
-        <div class="container mx-auto px-4 max-w-4xl">
-            <!-- Article Meta -->
-            <div class="flex gap-2 flex-wrap mb-6">
-                <div class="badge badge-primary badge-lg" id="article-category">Category</div>
-                <div class="badge badge-outline badge-lg" id="article-read-time">8 min read</div>
+    <!-- Article Container -->
+    <article class="min-h-screen bg-white py-12">
+        <!-- Article Header -->
+        <header class="container mx-auto px-6 max-w-3xl mb-12">
+            <!-- Category Badge -->
+            <div class="mb-6">
+                <span id="article-category" class="text-sm font-medium text-base-content/60 uppercase tracking-wide">
+                    Category
+                </span>
             </div>
-
+            
             <!-- Title -->
-            <h1 class="text-4xl md:text-5xl font-bold mb-6" id="article-title">
+            <h1 id="article-title" class="text-4xl md:text-5xl font-bold text-base-content mb-6 leading-tight" style="font-family: 'Inter', sans-serif;">
                 Article Title
             </h1>
-
+            
             <!-- Subtitle -->
-            <p class="text-xl md:text-2xl text-base-content/70 mb-8" id="article-subtitle">
+            <p id="article-subtitle" class="text-xl md:text-2xl text-base-content/70 mb-8 leading-relaxed">
                 Article subtitle or excerpt goes here
             </p>
-
-            <!-- Author Info -->
-            <div class="flex items-center gap-4 mb-8 pb-8 border-b border-base-300">
-                <div class="avatar placeholder">
-                    <div class="bg-primary text-primary-content rounded-full w-16">
-                        <span class="text-xl" id="author-initials">JD</span>
+            
+            <!-- Author & Meta -->
+            <div class="flex items-center justify-between py-6 border-y border-base-200">
+                <div class="flex items-center gap-4">
+                    <div class="avatar placeholder">
+                        <div class="bg-base-300 text-base-content rounded-full w-12 h-12">
+                            <span class="text-sm font-medium" id="author-initials">JD</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="font-semibold text-base" id="article-author">Author Name</div>
+                        <div class="text-sm text-base-content/60">
+                            <span id="article-date">Date</span>
+                            <span class="mx-1">·</span>
+                            <span id="article-read-time">8 min read</span>
+                        </div>
                     </div>
                 </div>
-                <div>
-                    <div class="font-bold text-lg" id="article-author">Author Name</div>
-                    <div class="text-sm opacity-60">
-                        <span id="article-date">Date</span>
-                        <span class="mx-2">•</span>
-                        <span id="article-read-time-2">8 min read</span>
-                    </div>
-                </div>
-                <div class="ml-auto flex gap-2">
+                
+                <!-- Share Icons -->
+                <div class="hidden md:flex gap-2">
                     <button class="btn btn-circle btn-sm btn-ghost" title="Share on Twitter">
                         <i class="fab fa-twitter"></i>
-                    </button>
-                    <button class="btn btn-circle btn-sm btn-ghost" title="Share on Facebook">
-                        <i class="fab fa-facebook"></i>
                     </button>
                     <button class="btn btn-circle btn-sm btn-ghost" title="Share on LinkedIn">
                         <i class="fab fa-linkedin"></i>
                     </button>
-                    <button class="btn btn-circle btn-sm btn-ghost" title="Copy Link">
+                    <button class="btn btn-circle btn-sm btn-ghost" title="Copy link">
                         <i class="fas fa-link"></i>
                     </button>
                 </div>
             </div>
+        </header>
 
-            <!-- Featured Image -->
-            <figure class="mb-12">
-                <img id="article-image" 
-                     src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop" 
-                     alt="Article cover" 
-                     class="rounded-lg shadow-xl w-full" />
-            </figure>
+        <!-- Featured Image -->
+        <figure class="container mx-auto px-6 max-w-4xl mb-12">
+            <img id="article-image" 
+                 src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop" 
+                 alt="Article cover" 
+                 class="w-full h-auto rounded-lg" />
+        </figure>
 
-            <!-- Article Content -->
-            <div class="prose prose-lg max-w-none article-content" id="article-content">
+        <!-- Article Content -->
+        <div class="container mx-auto px-6 max-w-3xl">
+            <div class="article-content" id="article-content">
                 <!-- Content will be loaded here by JavaScript -->
             </div>
-
+            
             <!-- Tags -->
-            <div class="mt-12 pt-8 border-t border-base-300">
-                <h3 class="font-bold mb-4">Tags:</h3>
-                <div class="flex gap-2 flex-wrap" id="article-tags">
+            <div class="mt-12 pt-8 border-t border-base-200">
+                <div class="flex flex-wrap gap-2" id="article-tags">
                     <!-- Tags will be loaded here -->
                 </div>
             </div>
-
+            
+            <!-- Author Card -->
+            <div class="mt-12 p-8 bg-base-100 rounded-lg border border-base-200">
+                <div class="flex items-start gap-4">
+                    <div class="avatar placeholder flex-shrink-0">
+                        <div class="bg-base-300 text-base-content rounded-full w-16 h-16">
+                            <span class="text-lg font-medium" id="author-initials-bottom">JD</span>
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <div class="font-bold text-lg mb-1" id="article-author-bottom">Author Name</div>
+                        <p class="text-base-content/70 text-sm leading-relaxed">
+                            Digital marketing expert sharing insights on SEO, content strategy, and growth marketing.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
             <!-- Share Section -->
-            <div class="mt-8 p-6 bg-base-200 rounded-lg">
-                <h3 class="font-bold text-lg mb-4">Share this article</h3>
-                <div class="flex gap-4">
-                    <button class="btn btn-primary">
-                        <i class="fab fa-twitter mr-2"></i> Tweet
+            <div class="mt-12 text-center">
+                <p class="text-sm text-base-content/60 mb-4">Share this article</p>
+                <div class="flex justify-center gap-3">
+                    <button class="btn btn-circle btn-ghost">
+                        <i class="fab fa-twitter text-xl"></i>
                     </button>
-                    <button class="btn btn-info">
-                        <i class="fab fa-linkedin mr-2"></i> Share
+                    <button class="btn btn-circle btn-ghost">
+                        <i class="fab fa-linkedin text-xl"></i>
                     </button>
-                    <button class="btn btn-accent">
-                        <i class="fab fa-facebook mr-2"></i> Post
+                    <button class="btn btn-circle btn-ghost">
+                        <i class="fab fa-facebook text-xl"></i>
+                    </button>
+                    <button class="btn btn-circle btn-ghost">
+                        <i class="fas fa-link text-xl"></i>
                     </button>
                 </div>
             </div>
@@ -178,85 +243,30 @@
     </article>
 
     <!-- Related Articles -->
-    <div class="bg-base-200 py-16">
-        <div class="container mx-auto px-4 max-w-7xl">
-            <h2 class="text-3xl font-bold mb-8">Related Articles</h2>
-            <div id="related-articles" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="bg-base-100 py-16 border-t border-base-200">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <h2 class="text-2xl font-bold mb-8">More from Keyword Tool</h2>
+            <div id="related-articles" class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Related articles will be loaded here -->
             </div>
         </div>
     </div>
 
-    <!-- Newsletter CTA -->
-    <div class="bg-primary text-primary-content py-16">
-        <div class="container mx-auto px-4 max-w-3xl text-center">
-            <h2 class="text-4xl font-bold mb-4">Want more insights like this?</h2>
-            <p class="text-lg mb-8 opacity-90">
-                Subscribe to our newsletter for weekly digital marketing tips
-            </p>
-            <div class="join w-full max-w-md mx-auto">
-                <input type="email" placeholder="Your email" class="input input-bordered join-item flex-1" />
-                <button class="btn btn-accent join-item">Subscribe</button>
+    <!-- Simple Footer -->
+    <footer class="bg-white border-t border-base-200 py-12">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-sm text-base-content/60">
+                    © 2025 Keyword Tool. All rights reserved.
+                </div>
+                <div class="flex gap-6">
+                    <a href="#" class="text-sm text-base-content/60 hover:text-base-content">Terms</a>
+                    <a href="#" class="text-sm text-base-content/60 hover:text-base-content">Privacy</a>
+                    <a href="contact.html" class="text-sm text-base-content/60 hover:text-base-content">Contact</a>
+                </div>
             </div>
         </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer p-10 bg-base-200 text-base-content">
-        <nav>
-            <h6 class="footer-title">Content</h6>
-            <a href="categories.html" class="link link-hover">All Topics</a>
-            <a href="index.html" class="link link-hover">Latest Articles</a>
-            <a href="#" class="link link-hover">Popular Posts</a>
-            <a href="#" class="link link-hover">Case Studies</a>
-        </nav>
-        <nav>
-            <h6 class="footer-title">Company</h6>
-            <a href="about.html" class="link link-hover">About Us</a>
-            <a href="contact.html" class="link link-hover">Contact</a>
-            <a href="#" class="link link-hover">Careers</a>
-            <a href="#" class="link link-hover">Partners</a>
-        </nav>
-        <nav>
-            <h6 class="footer-title">Legal</h6>
-            <a href="#" class="link link-hover">Terms of Service</a>
-            <a href="#" class="link link-hover">Privacy Policy</a>
-            <a href="#" class="link link-hover">Cookie Policy</a>
-        </nav>
-        <nav>
-            <h6 class="footer-title">Social</h6>
-            <div class="grid grid-flow-col gap-4">
-                <a href="#" class="link link-hover"><i class="fab fa-twitter text-xl"></i></a>
-                <a href="#" class="link link-hover"><i class="fab fa-facebook text-xl"></i></a>
-                <a href="#" class="link link-hover"><i class="fab fa-linkedin text-xl"></i></a>
-                <a href="#" class="link link-hover"><i class="fab fa-youtube text-xl"></i></a>
-            </div>
-        </nav>
     </footer>
-    <footer class="footer footer-center p-4 bg-base-300 text-base-content">
-        <aside>
-            <p>Copyright © 2025 - Keyword Tool Blog. All rights reserved.</p>
-        </aside>
-    </footer>
-
-    <!-- Search Modal -->
-    <dialog id="search_modal" class="modal">
-        <div class="modal-box w-11/12 max-w-2xl">
-            <h3 class="font-bold text-lg mb-4">Search Articles</h3>
-            <input type="text" id="search-input" placeholder="Type to search..." class="input input-bordered w-full mb-4" />
-            <div id="search-results" class="space-y-2 max-h-96 overflow-y-auto">
-                <!-- Search results will appear here -->
-            </div>
-            <div class="modal-action">
-                <form method="dialog">
-                    <button class="btn">Close</button>
-                </form>
-            </div>
-        </div>
-        <form method="dialog" class="modal-backdrop">
-            <button>close</button>
-        </form>
-    </dialog>
 
     <script src="data/articles.js"></script>
     <script src="js/article.js"></script>
