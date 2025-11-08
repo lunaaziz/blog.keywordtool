@@ -1,25 +1,27 @@
 // Article Page JavaScript
 
-// Theme Toggle
+// Theme Toggle (if it exists)
 const themeToggle = document.getElementById('theme-toggle');
 const htmlElement = document.documentElement;
 
 const currentTheme = localStorage.getItem('theme') || 'light';
 htmlElement.setAttribute('data-theme', currentTheme);
 
-if (currentTheme === 'dark') {
-    themeToggle.checked = true;
-}
-
-themeToggle.addEventListener('change', function() {
-    if (this.checked) {
-        htmlElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-    } else {
-        htmlElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
+if (themeToggle) {
+    if (currentTheme === 'dark') {
+        themeToggle.checked = true;
     }
-});
+
+    themeToggle.addEventListener('change', function() {
+        if (this.checked) {
+            htmlElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            htmlElement.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light');
+        }
+    });
+}
 
 // Get article ID from URL
 function getArticleIdFromURL() {
