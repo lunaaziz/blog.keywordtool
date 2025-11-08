@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Keyword Tool Blog</title>
+    <meta name="description" content="Learn about our mission to provide valuable digital marketing insights.">
+    
+    <!-- Tailwind CSS + DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <div class="navbar bg-base-100 shadow-sm sticky top-0 z-50 border-b border-base-200">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+                    </svg>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="categories.html">Topics</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <a href="index.html" class="btn btn-ghost text-xl font-bold">
+                <i class="fas fa-key text-primary"></i>
+                Keyword Tool Blog
+            </a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+                <li><a href="index.html" class="font-medium">Home</a></li>
+                <li><a href="categories.html" class="font-medium">Topics</a></li>
+                <li><a href="about.html" class="font-medium">About</a></li>
+                <li><a href="contact.html" class="font-medium">Contact</a></li>
+            </ul>
+        </div>
+        <div class="navbar-end">
+            <label class="swap swap-rotate btn btn-ghost btn-circle">
+                <input type="checkbox" id="theme-toggle" />
+                <svg class="swap-on fill-current w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"/></svg>
+                <svg class="swap-off fill-current w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"/></svg>
+            </label>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero min-h-[400px] bg-gradient-to-br from-primary to-secondary">
+        <div class="hero-content text-center text-primary-content">
+            <div class="max-w-2xl">
+                <h1 class="text-5xl font-bold mb-6">About Us</h1>
+                <p class="text-xl opacity-90">
+                    Empowering marketers with knowledge and insights
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mission Section -->
+    <div class="container mx-auto px-4 py-16 max-w-4xl">
+        <div class="prose lg:prose-xl mx-auto">
+            <h2 class="text-center">Our Mission</h2>
+            <p class="text-center text-lg">
+                We're dedicated to providing actionable digital marketing insights that help businesses grow. Our blog covers everything from SEO and content marketing to social media strategies and analytics.
+            </p>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="bg-base-200 py-16">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="stats stats-vertical lg:stats-horizontal shadow w-full">
+                <div class="stat">
+                    <div class="stat-figure text-primary">
+                        <i class="fas fa-users text-4xl"></i>
+                    </div>
+                    <div class="stat-title">Monthly Readers</div>
+                    <div class="stat-value text-primary">500K+</div>
+                    <div class="stat-desc">Growing every month</div>
+                </div>
+                
+                <div class="stat">
+                    <div class="stat-figure text-secondary">
+                        <i class="fas fa-newspaper text-4xl"></i>
+                    </div>
+                    <div class="stat-title">Articles Published</div>
+                    <div class="stat-value text-secondary">250+</div>
+                    <div class="stat-desc">And counting</div>
+                </div>
+                
+                <div class="stat">
+                    <div class="stat-figure text-accent">
+                        <i class="fas fa-trophy text-4xl"></i>
+                    </div>
+                    <div class="stat-title">Industry Awards</div>
+                    <div class="stat-value text-accent">15+</div>
+                    <div class="stat-desc">Recognition for excellence</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Values Section -->
+    <div class="container mx-auto px-4 py-16 max-w-6xl">
+        <h2 class="text-4xl font-bold text-center mb-12">Our Values</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="card bg-base-100 shadow-xl">
+                <div class="card-body items-center text-center">
+                    <div class="bg-primary text-primary-content rounded-full w-20 h-20 flex items-center justify-center mb-4">
+                        <i class="fas fa-lightbulb text-3xl"></i>
+                    </div>
+                    <h3 class="card-title">Innovation</h3>
+                    <p>We stay ahead of industry trends to bring you cutting-edge insights and strategies.</p>
+                </div>
+            </div>
+
+            <div class="card bg-base-100 shadow-xl">
+                <div class="card-body items-center text-center">
+                    <div class="bg-secondary text-secondary-content rounded-full w-20 h-20 flex items-center justify-center mb-4">
+                        <i class="fas fa-check-circle text-3xl"></i>
+                    </div>
+                    <h3 class="card-title">Quality</h3>
+                    <p>Every article is thoroughly researched and fact-checked by industry experts.</p>
+                </div>
+            </div>
+
+            <div class="card bg-base-100 shadow-xl">
+                <div class="card-body items-center text-center">
+                    <div class="bg-accent text-accent-content rounded-full w-20 h-20 flex items-center justify-center mb-4">
+                        <i class="fas fa-heart text-3xl"></i>
+                    </div>
+                    <h3 class="card-title">Community</h3>
+                    <p>We build a supportive community of marketers learning and growing together.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team Section -->
+    <div class="bg-base-200 py-16">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <h2 class="text-4xl font-bold text-center mb-12">Meet Our Team</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="card bg-base-100 shadow-xl">
+                    <figure class="px-10 pt-10">
+                        <div class="avatar placeholder">
+                            <div class="bg-primary text-primary-content rounded-full w-24">
+                                <span class="text-3xl">JD</span>
+                            </div>
+                        </div>
+                    </figure>
+                    <div class="card-body items-center text-center">
+                        <h3 class="card-title">Jane Doe</h3>
+                        <p class="text-sm opacity-70">Chief Editor</p>
+                        <p class="text-sm">SEO & Content Strategy Expert</p>
+                        <div class="card-actions mt-2">
+                            <button class="btn btn-circle btn-sm btn-ghost">
+                                <i class="fab fa-twitter"></i>
+                            </button>
+                            <button class="btn btn-circle btn-sm btn-ghost">
+                                <i class="fab fa-linkedin"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-base-100 shadow-xl">
+                    <figure class="px-10 pt-10">
+                        <div class="avatar placeholder">
+                            <div class="bg-secondary text-secondary-content rounded-full w-24">
+                                <span class="text-3xl">MS</span>
+                            </div>
+                        </div>
+                    </figure>
+                    <div class="card-body items-center text-center">
+                        <h3 class="card-title">Mike Smith</h3>
+                        <p class="text-sm opacity-70">Senior Writer</p>
+                        <p class="text-sm">Technical SEO Specialist</p>
+                        <div class="card-actions mt-2">
+                            <button class="btn btn-circle btn-sm btn-ghost">
+                                <i class="fab fa-twitter"></i>
+                            </button>
+                            <button class="btn btn-circle btn-sm btn-ghost">
+                                <i class="fab fa-linkedin"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-base-100 shadow-xl">
+                    <figure class="px-10 pt-10">
+                        <div class="avatar placeholder">
+                            <div class="bg-accent text-accent-content rounded-full w-24">
+                                <span class="text-3xl">SK</span>
+                            </div>
+                        </div>
+                    </figure>
+                    <div class="card-body items-center text-center">
+                        <h3 class="card-title">Sarah Kim</h3>
+                        <p class="text-sm opacity-70">Content Strategist</p>
+                        <p class="text-sm">Social Media Expert</p>
+                        <div class="card-actions mt-2">
+                            <button class="btn btn-circle btn-sm btn-ghost">
+                                <i class="fab fa-twitter"></i>
+                            </button>
+                            <button class="btn btn-circle btn-sm btn-ghost">
+                                <i class="fab fa-linkedin"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-base-100 shadow-xl">
+                    <figure class="px-10 pt-10">
+                        <div class="avatar placeholder">
+                            <div class="bg-info text-info-content rounded-full w-24">
+                                <span class="text-3xl">DL</span>
+                            </div>
+                        </div>
+                    </figure>
+                    <div class="card-body items-center text-center">
+                        <h3 class="card-title">David Lee</h3>
+                        <p class="text-sm opacity-70">Analytics Lead</p>
+                        <p class="text-sm">Data & Insights Specialist</p>
+                        <div class="card-actions mt-2">
+                            <button class="btn btn-circle btn-sm btn-ghost">
+                                <i class="fab fa-twitter"></i>
+                            </button>
+                            <button class="btn btn-circle btn-sm btn-ghost">
+                                <i class="fab fa-linkedin"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="container mx-auto px-4 py-16 max-w-4xl text-center">
+        <h2 class="text-4xl font-bold mb-6">Want to Contribute?</h2>
+        <p class="text-lg mb-8">
+            We're always looking for guest writers and industry experts to share their knowledge.
+        </p>
+        <a href="contact.html" class="btn btn-primary btn-lg">Get in Touch</a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer p-10 bg-base-200 text-base-content">
+        <nav>
+            <h6 class="footer-title">Content</h6>
+            <a href="categories.html" class="link link-hover">All Topics</a>
+            <a href="index.html" class="link link-hover">Latest Articles</a>
+            <a href="#" class="link link-hover">Popular Posts</a>
+            <a href="#" class="link link-hover">Case Studies</a>
+        </nav>
+        <nav>
+            <h6 class="footer-title">Company</h6>
+            <a href="about.html" class="link link-hover">About Us</a>
+            <a href="contact.html" class="link link-hover">Contact</a>
+            <a href="#" class="link link-hover">Careers</a>
+            <a href="#" class="link link-hover">Partners</a>
+        </nav>
+        <nav>
+            <h6 class="footer-title">Legal</h6>
+            <a href="#" class="link link-hover">Terms of Service</a>
+            <a href="#" class="link link-hover">Privacy Policy</a>
+            <a href="#" class="link link-hover">Cookie Policy</a>
+        </nav>
+        <nav>
+            <h6 class="footer-title">Social</h6>
+            <div class="grid grid-flow-col gap-4">
+                <a href="#" class="link link-hover"><i class="fab fa-twitter text-xl"></i></a>
+                <a href="#" class="link link-hover"><i class="fab fa-facebook text-xl"></i></a>
+                <a href="#" class="link link-hover"><i class="fab fa-linkedin text-xl"></i></a>
+                <a href="#" class="link link-hover"><i class="fab fa-youtube text-xl"></i></a>
+            </div>
+        </nav>
+    </footer>
+    <footer class="footer footer-center p-4 bg-base-300 text-base-content">
+        <aside>
+            <p>Copyright © 2025 - Keyword Tool Blog. All rights reserved.</p>
+        </aside>
+    </footer>
+
+    <script src="js/theme.js"></script>
+</body>
+</html>
+
