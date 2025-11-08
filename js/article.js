@@ -81,7 +81,7 @@ function loadArticle() {
     // Update tags
     const tagsContainer = document.getElementById('article-tags');
     tagsContainer.innerHTML = article.tags.map(tag => 
-        `<span class="badge badge-sm badge-ghost">${tag}</span>`
+        `<span class="inline-block px-3 py-1 text-xs font-medium text-base-content/60 bg-base-200 rounded-full">${tag}</span>`
     ).join('');
     
     // Load related articles
