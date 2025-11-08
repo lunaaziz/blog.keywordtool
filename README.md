@@ -80,7 +80,7 @@ blog.keywordtool/
 ├── data/
 │   └── articles.js        # ⭐ All article content
 ├── js/
-│   ├── notion-style.js    # Homepage logic
+│   ├── home.js            # Homepage logic
 │   ├── article.js         # Article page logic
 │   ├── categories.js      # Categories logic
 │   └── theme.js           # Theme toggle

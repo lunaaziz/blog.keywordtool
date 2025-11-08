@@ -1,4 +1,4 @@
-// Notion-style Blog JavaScript
+// Blog Homepage JavaScript
 
 // Theme management
 const htmlElement = document.documentElement;
@@ -9,7 +9,7 @@ htmlElement.setAttribute('data-theme', currentTheme);
 let currentFilter = 'all';
 let displayedArticles = 9;
 
-// Load articles in Notion style
+// Load articles
 function loadArticles(filter = 'all') {
     const articlesGrid = document.getElementById('articles-grid');
     if (!articlesGrid) return;
@@ -20,7 +20,7 @@ function loadArticles(filter = 'all') {
     articlesGrid.innerHTML = '';
     
     articlesToShow.forEach(article => {
-        const articleCard = createNotionStyleCard(article);
+        const articleCard = createArticleCard(article);
         articlesGrid.appendChild(articleCard);
     });
     
@@ -35,11 +35,11 @@ function loadArticles(filter = 'all') {
     }
 }
 
-// Create Notion-style article card
-function createNotionStyleCard(article) {
+// Create article card
+function createArticleCard(article) {
     const card = document.createElement('a');
     card.href = `article.html?id=${article.id}`;
-    card.className = 'notion-card block group cursor-pointer';
+    card.className = 'article-card block group cursor-pointer';
     card.setAttribute('data-category', article.category);
     
     card.innerHTML = `
@@ -47,7 +47,7 @@ function createNotionStyleCard(article) {
             <img 
                 src="${article.image}" 
                 alt="${article.title}" 
-                class="notion-card-image w-full h-64 object-cover"
+                class="article-card-image w-full h-64 object-cover"
             />
         </div>
         <div class="space-y-3">
@@ -79,7 +79,7 @@ function createNotionStyleCard(article) {
 document.addEventListener('DOMContentLoaded', function() {
     loadArticles('all');
     
-    // Tab filtering with Notion-style active state
+    // Tab filtering with active state
     const filterTabs = document.querySelectorAll('.tab-filter');
     filterTabs.forEach(tab => {
         tab.addEventListener('click', function() {
@@ -175,7 +175,7 @@ const observer = new IntersectionObserver(function(entries) {
 
 window.addEventListener('load', function() {
     setTimeout(() => {
-        const cards = document.querySelectorAll('.notion-card');
+        const cards = document.querySelectorAll('.article-card');
         cards.forEach((card, index) => {
             card.style.opacity = '0';
             card.style.transform = 'translateY(20px)';
