@@ -59,6 +59,10 @@ function loadArticle() {
     document.getElementById('article-author').textContent = article.author;
     document.getElementById('article-date').textContent = article.date;
     
+    // Update bottom author info
+    document.getElementById('author-initials-bottom').textContent = article.authorInitials;
+    document.getElementById('article-author-bottom').textContent = article.author;
+    
     // Update featured image
     const featuredImage = document.getElementById('article-image');
     featuredImage.src = article.image;
@@ -70,7 +74,7 @@ function loadArticle() {
     // Update tags
     const tagsContainer = document.getElementById('article-tags');
     tagsContainer.innerHTML = article.tags.map(tag => 
-        `<span class="badge badge-lg">${tag}</span>`
+        `<span class="badge badge-sm badge-ghost">${tag}</span>`
     ).join('');
     
     // Load related articles
@@ -91,31 +95,22 @@ function loadRelatedArticles(articleId) {
     }
     
     relatedContainer.innerHTML = relatedArticles.map(article => `
-        <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
-            <figure>
-                <img src="${article.image}" alt="${article.title}" class="w-full h-48 object-cover" />
-            </figure>
-            <div class="card-body">
-                <div class="badge badge-primary badge-sm">${article.category}</div>
-                <h3 class="card-title text-lg">
-                    <a href="article.html?id=${article.id}" class="hover:text-primary transition-colors">
-                        ${article.title}
-                    </a>
+        <a href="article.html?id=${article.id}" class="block group">
+            <div class="mb-4 overflow-hidden rounded-lg">
+                <img src="${article.image}" alt="${article.title}" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
+            </div>
+            <div class="space-y-2">
+                <div class="text-sm font-medium text-base-content/60">${article.category}</div>
+                <h3 class="text-xl font-bold group-hover:text-primary transition-colors">
+                    ${article.title}
                 </h3>
-                <p class="text-sm opacity-80 line-clamp-2">${article.excerpt}</p>
-                <div class="flex items-center gap-2 mt-2">
-                    <div class="avatar placeholder">
-                        <div class="bg-primary text-primary-content rounded-full w-8">
-                            <span class="text-xs">${article.authorInitials}</span>
-                        </div>
-                    </div>
-                    <div class="text-xs opacity-60">${article.date}</div>
-                </div>
-                <div class="card-actions justify-end mt-2">
-                    <a href="article.html?id=${article.id}" class="btn btn-primary btn-sm">Read</a>
+                <div class="flex items-center gap-2 text-sm text-base-content/60">
+                    <span>${article.author}</span>
+                    <span>·</span>
+                    <span>${article.readTime}</span>
                 </div>
             </div>
-        </div>
+        </a>
     `).join('');
 }
 
