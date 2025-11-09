@@ -7,7 +7,7 @@ const articlesDatabase = [
         "title": "GroupM & IKEA Türkiye YouTube SEO Case Study: 46% Organic Views Growth",
         "subtitle": "",
         "excerpt": "",
-        "category": "Uncategorized",
+        "category": "SEO",
         "tags": [],
         "author": "Unknown",
         "authorInitials": "U",
