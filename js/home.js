@@ -11,15 +11,25 @@ let displayedArticles = 9;
 
 // Load articles
 function loadArticles(filter = 'all') {
+    const featuredContainer = document.getElementById('featured-article');
     const articlesGrid = document.getElementById('articles-grid');
-    if (!articlesGrid) return;
+    if (!articlesGrid || !featuredContainer) return;
 
     let articles = filter === 'all' ? getAllArticles() : getArticlesByCategory(filter);
     const articlesToShow = articles.slice(0, displayedArticles);
     
+    // Clear containers
+    featuredContainer.innerHTML = '';
     articlesGrid.innerHTML = '';
     
-    articlesToShow.forEach(article => {
+    // First article as featured (full width)
+    if (articlesToShow.length > 0) {
+        const featuredCard = createFeaturedArticleCard(articlesToShow[0]);
+        featuredContainer.appendChild(featuredCard);
+    }
+    
+    // Rest of articles in grid
+    articlesToShow.slice(1).forEach(article => {
         const articleCard = createArticleCard(article);
         articlesGrid.appendChild(articleCard);
     });
@@ -35,7 +45,40 @@ function loadArticles(filter = 'all') {
     }
 }
 
-// Create article card
+// Create featured article card (full width)
+function createFeaturedArticleCard(article) {
+    const card = document.createElement('a');
+    card.href = `article.html?id=${article.id}`;
+    card.className = 'article-card block group cursor-pointer';
+    card.setAttribute('data-category', article.category);
+    
+    card.innerHTML = `
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div class="overflow-hidden rounded-2xl order-2 lg:order-1">
+                <img 
+                    src="${article.image}" 
+                    alt="${article.title}" 
+                    class="article-card-image w-full h-96 lg:h-[500px] object-cover"
+                />
+            </div>
+            <div class="space-y-4 order-1 lg:order-2">
+                <div class="badge badge-outline badge-lg text-primary">${article.category}</div>
+                <span class="text-sm text-base-content/60">${article.readTime}</span>
+                <h2 class="text-4xl lg:text-5xl font-bold text-base-content group-hover:text-primary transition-colors leading-tight">
+                    ${article.title}
+                </h2>
+                <p class="text-lg text-base-content/70 leading-relaxed">
+                    ${article.subtitle || article.excerpt}
+                </p>
+                <button class="btn btn-outline btn-primary">Read more</button>
+            </div>
+        </div>
+    `;
+    
+    return card;
+}
+
+// Create article card (grid item)
 function createArticleCard(article) {
     const card = document.createElement('a');
     card.href = `article.html?id=${article.id}`;
@@ -43,7 +86,7 @@ function createArticleCard(article) {
     card.setAttribute('data-category', article.category);
     
     card.innerHTML = `
-        <div class="mb-4 overflow-hidden rounded-lg">
+        <div class="mb-4 overflow-hidden rounded-xl">
             <img 
                 src="${article.image}" 
                 alt="${article.title}" 
@@ -51,24 +94,16 @@ function createArticleCard(article) {
             />
         </div>
         <div class="space-y-3">
-            <div class="flex items-center gap-2 text-sm">
-                <span class="font-medium text-base-content/60">${article.category}</span>
-            </div>
-            <h3 class="text-2xl font-bold text-base-content group-hover:text-primary transition-colors leading-tight">
-                ${article.title}
-            </h3>
             <div class="flex items-center gap-3 text-sm text-base-content/60">
-                <div class="flex items-center gap-2">
-                    <div class="avatar placeholder">
-                        <div class="bg-neutral text-neutral-content rounded-full w-6 h-6 text-xs">
-                            <span>${article.authorInitials}</span>
-                        </div>
-                    </div>
-                    <span>${article.author}</span>
-                </div>
-                <span>•</span>
+                <span class="badge badge-ghost badge-sm">${article.category}</span>
                 <span>${article.readTime}</span>
             </div>
+            <h3 class="text-xl font-bold text-base-content group-hover:text-primary transition-colors leading-tight line-clamp-2">
+                ${article.title}
+            </h3>
+            <p class="text-sm text-base-content/60 line-clamp-3">
+                ${article.subtitle || article.excerpt}
+            </p>
         </div>
     `;
     

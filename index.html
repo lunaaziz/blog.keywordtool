@@ -42,8 +42,8 @@
 <body class="bg-white">
     
     <!-- Navigation -->
-    <div class="navbar bg-white border-b border-base-200 sticky top-0 z-50">
-        <div class="container mx-auto max-w-7xl px-6">
+    <div class="navbar bg-white border-b border-base-200 sticky top-0 z-50 w-full">
+        <div class="w-full px-6 max-w-screen-2xl mx-auto">
             <div class="navbar-start">
                 <div class="dropdown">
                     <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -71,12 +71,12 @@
                 </ul>
             </div>
             <div class="navbar-end gap-2">
-                <button class="btn btn-ghost btn-sm" onclick="search_modal.showModal()">
+                <button class="btn btn-ghost btn-sm btn-circle" onclick="search_modal.showModal()">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
                 </button>
-                <a href="contact.html" class="btn btn-neutral btn-sm">Get in touch</a>
+                <a href="https://keywordtool.io" target="_blank" class="btn btn-neutral btn-sm">Back to main</a>
             </div>
         </div>
     </div>
@@ -121,11 +121,17 @@
         </div>
     </div>
 
-    <!-- Articles Grid -->
+    <!-- Articles Section -->
     <div class="bg-white py-12 min-h-screen">
-        <div class="container mx-auto px-6 max-w-7xl">
+        <div class="w-full px-6 max-w-screen-2xl mx-auto">
+            <!-- Featured Article (Full Width) -->
+            <div id="featured-article" class="mb-16">
+                <!-- Featured article will be loaded here -->
+            </div>
+
+            <!-- Articles Grid (3 Columns) -->
             <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
-                <!-- Articles will be loaded here by JavaScript -->
+                <!-- Rest of articles will be loaded here -->
             </div>
 
             <!-- Load More -->
