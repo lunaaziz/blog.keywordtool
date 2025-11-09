@@ -46,7 +46,7 @@ const articlesDatabase = [
             <h2 class="text-3xl font-bold mt-8 mb-4">Technical SEO Essentials</h2>
             <p class="mb-4">Technical optimization remains the foundation of good SEO. Key areas to focus on include:</p>
             
-            <div class="bg-base-200 p-6 rounded-lg mb-6">
+            <div class="bg-gray-50 p-6 rounded-lg mb-6 border border-gray-200">
                 <h3 class="font-bold text-lg mb-3">Core Web Vitals</h3>
                 <p>Google's Core Web Vitals measure user experience through loading speed, interactivity, and visual stability. Optimize these metrics by:</p>
                 <ul class="list-disc list-inside mt-2 space-y-1">
@@ -67,11 +67,13 @@ const articlesDatabase = [
                 <li><strong>Regular Updates:</strong> Keep content fresh by updating statistics, adding new information, and removing outdated details.</li>
             </ol>
 
-            <div class="alert alert-info mb-6">
-                <i class="fas fa-lightbulb"></i>
-                <div>
-                    <h3 class="font-bold">Pro Tip</h3>
-                    <p class="text-sm">Focus on answering the questions your audience is actually asking. Use tools to find "People Also Ask" queries and address them in your content.</p>
+            <div class="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-lg mb-6">
+                <div class="flex items-start gap-3">
+                    <i class="fas fa-lightbulb text-blue-600 text-xl mt-1"></i>
+                    <div>
+                        <h3 class="font-bold text-blue-900 mb-2">Pro Tip</h3>
+                        <p class="text-sm text-blue-800">Focus on answering the questions your audience is actually asking. Use tools to find "People Also Ask" queries and address them in your content.</p>
+                    </div>
                 </div>
             </div>
 

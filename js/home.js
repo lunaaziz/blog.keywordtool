@@ -15,21 +15,23 @@ function loadArticles(filter = 'all') {
     const articlesGrid = document.getElementById('articles-grid');
     if (!articlesGrid || !featuredContainer) return;
 
-    let articles = filter === 'all' ? getAllArticles() : getArticlesByCategory(filter);
-    const articlesToShow = articles.slice(0, displayedArticles);
+    // Always show the first article as featured (unfiltered)
+    const allArticles = getAllArticles();
     
-    // Clear containers
+    // Load featured article (always the first one, unfiltered)
     featuredContainer.innerHTML = '';
-    articlesGrid.innerHTML = '';
-    
-    // First article as featured (full width)
-    if (articlesToShow.length > 0) {
-        const featuredCard = createFeaturedArticleCard(articlesToShow[0]);
+    if (allArticles.length > 0) {
+        const featuredCard = createFeaturedArticleCard(allArticles[0]);
         featuredContainer.appendChild(featuredCard);
     }
     
-    // Rest of articles in grid
-    articlesToShow.slice(1).forEach(article => {
+    // Filter articles for grid (excluding the first one)
+    let gridArticles = filter === 'all' ? allArticles.slice(1) : getArticlesByCategory(filter).filter(article => article.id !== allArticles[0].id);
+    const articlesToShow = gridArticles.slice(0, displayedArticles - 1);
+    
+    // Clear and populate grid
+    articlesGrid.innerHTML = '';
+    articlesToShow.forEach(article => {
         const articleCard = createArticleCard(article);
         articlesGrid.appendChild(articleCard);
     });
@@ -37,7 +39,7 @@ function loadArticles(filter = 'all') {
     // Show/hide load more button
     const loadMoreBtn = document.getElementById('load-more-btn');
     if (loadMoreBtn) {
-        if (articles.length <= displayedArticles) {
+        if (gridArticles.length <= displayedArticles - 1) {
             loadMoreBtn.style.display = 'none';
         } else {
             loadMoreBtn.style.display = 'inline-flex';
@@ -62,15 +64,18 @@ function createFeaturedArticleCard(article) {
                 />
             </div>
             <div class="space-y-4 order-1 lg:order-2">
-                <div class="badge badge-outline badge-lg text-primary">${article.category}</div>
-                <span class="text-sm text-base-content/60">${article.readTime}</span>
+                <div class="text-sm text-base-content/60">
+                    <span>${article.category}</span>
+                    <span class="mx-2">•</span>
+                    <span>${article.readTime}</span>
+                </div>
                 <h2 class="text-4xl lg:text-5xl font-bold text-base-content group-hover:text-primary transition-colors leading-tight">
                     ${article.title}
                 </h2>
                 <p class="text-lg text-base-content/70 leading-relaxed">
                     ${article.subtitle || article.excerpt}
                 </p>
-                <button class="btn btn-outline btn-primary">Read more</button>
+                <button class="btn btn-outline btn-primary">Read full article</button>
             </div>
         </div>
     `;
@@ -94,16 +99,17 @@ function createArticleCard(article) {
             />
         </div>
         <div class="space-y-3">
-            <div class="flex items-center gap-3 text-sm text-base-content/60">
-                <span class="badge badge-ghost badge-sm">${article.category}</span>
-                <span>${article.readTime}</span>
-            </div>
             <h3 class="text-xl font-bold text-base-content group-hover:text-primary transition-colors leading-tight line-clamp-2">
                 ${article.title}
             </h3>
-            <p class="text-sm text-base-content/60 line-clamp-3">
+            <p class="text-sm text-base-content/60 line-clamp-3 mb-3">
                 ${article.subtitle || article.excerpt}
             </p>
+            <div class="text-xs text-base-content/60">
+                <span>${article.date}</span>
+                <span class="mx-1">•</span>
+                <span>${article.readTime}</span>
+            </div>
         </div>
     `;
     

@@ -60,15 +60,13 @@ function loadArticle() {
     // Update article header
     document.getElementById('article-title').textContent = article.title;
     document.getElementById('article-subtitle').textContent = article.subtitle;
-    
-    // Update author info
-    document.getElementById('author-initials').textContent = article.authorInitials;
-    document.getElementById('article-author').textContent = article.author;
     document.getElementById('article-date').textContent = article.date;
     
     // Update bottom author info
-    document.getElementById('author-initials-bottom').textContent = article.authorInitials;
-    document.getElementById('article-author-bottom').textContent = article.author;
+    const authorInitialsBottom = document.getElementById('author-initials-bottom');
+    const authorNameBottom = document.getElementById('article-author-bottom');
+    if (authorInitialsBottom) authorInitialsBottom.textContent = article.authorInitials;
+    if (authorNameBottom) authorNameBottom.textContent = article.author;
     
     // Update featured image
     const featuredImage = document.getElementById('article-image');
@@ -77,12 +75,6 @@ function loadArticle() {
     
     // Update article content
     document.getElementById('article-content').innerHTML = article.content;
-    
-    // Update tags
-    const tagsContainer = document.getElementById('article-tags');
-    tagsContainer.innerHTML = article.tags.map(tag => 
-        `<span class="inline-block px-3 py-1 text-xs font-medium text-base-content/60 bg-base-200 rounded-full">${tag}</span>`
-    ).join('');
     
     // Load related articles
     loadRelatedArticles(article.id);

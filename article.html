@@ -155,54 +155,29 @@
     <!-- Article Container -->
     <article class="min-h-screen bg-white py-12">
         <!-- Article Header -->
-        <header class="container mx-auto px-6 max-w-3xl mb-12">
-            <!-- Category Badge -->
-            <div class="mb-6">
-                <span id="article-category" class="text-sm font-medium text-base-content/50 uppercase tracking-wider">
+        <header class="container mx-auto px-6 max-w-4xl mb-12">
+            <!-- Category Badge (Centered) -->
+            <div class="mb-6 text-center">
+                <span id="article-category" class="text-sm font-semibold uppercase tracking-wider" style="color: #6610F2;">
                     Category
                 </span>
             </div>
             
-            <!-- Title -->
+            <!-- Title (Left Aligned) -->
             <h1 id="article-title" class="text-4xl md:text-5xl font-bold text-base-content mb-6 leading-tight" style="font-family: 'Inter', sans-serif;">
                 Article Title
             </h1>
             
-            <!-- Subtitle -->
-            <p id="article-subtitle" class="text-xl md:text-2xl text-base-content/70 mb-8 leading-relaxed">
+            <!-- Subtitle (Left Aligned) -->
+            <p id="article-subtitle" class="text-xl md:text-2xl text-base-content/70 mb-6 leading-relaxed">
                 Article subtitle or excerpt goes here
             </p>
             
-            <!-- Author & Meta -->
-            <div class="flex items-center justify-between py-6 border-y border-base-200/60">
-                <div class="flex items-center gap-3">
-                    <div class="avatar placeholder">
-                        <div class="bg-base-200 text-base-content/70 rounded-full w-10 h-10">
-                            <span class="text-xs font-medium" id="author-initials">JD</span>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="font-medium text-sm" id="article-author">Author Name</div>
-                        <div class="text-xs text-base-content/50">
-                            <span id="article-date">Date</span>
-                            <span class="mx-1">·</span>
-                            <span id="article-read-time">8 min read</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Share Icons -->
-                <div class="hidden md:flex gap-4 text-base-content/30">
-                    <button class="hover:text-base-content/70 transition-colors" title="Share on Twitter">
-                        <i class="fab fa-twitter text-sm"></i>
-                    </button>
-                    <button class="hover:text-base-content/70 transition-colors" title="Share on LinkedIn">
-                        <i class="fab fa-linkedin text-sm"></i>
-                    </button>
-                    <button class="hover:text-base-content/70 transition-colors" title="Copy link">
-                        <i class="fas fa-link text-sm"></i>
-                    </button>
-                </div>
+            <!-- Date & Read Time (Left Aligned) -->
+            <div class="text-sm text-base-content/60 mb-8">
+                <span id="article-date">Date</span>
+                <span class="mx-2">·</span>
+                <span id="article-read-time">8 min read</span>
             </div>
         </header>
 
@@ -215,7 +190,7 @@
         </figure>
 
         <!-- Article Content -->
-        <div class="container mx-auto px-6 max-w-3xl">
+        <div class="container mx-auto px-6 max-w-4xl">
             <div class="article-content" id="article-content">
                 <!-- Content will be loaded here by JavaScript -->
             </div>
@@ -236,13 +211,6 @@
                     <button class="hover:text-base-content/70 transition-colors" title="Copy link">
                         <i class="fas fa-link text-xl"></i>
                     </button>
-                </div>
-            </div>
-            
-            <!-- Tags -->
-            <div class="mt-12 pt-8 border-t border-base-200">
-                <div class="flex flex-wrap gap-2" id="article-tags">
-                    <!-- Tags will be loaded here -->
                 </div>
             </div>
             
