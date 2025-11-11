@@ -1,5 +1,5 @@
 // Articles Database - Scraped from blog.keywordtool.io
-// Last updated: 2025-11-11 08:33:26
+// Last updated: 2025-11-11 08:39:18
 // Synced from TinaCMS
 
 const articlesDatabase = [
@@ -1099,6 +1099,11 @@ const articlesDatabase = [
             "content": "Welcome to the Keyword Tool Blog! Discover expert insights, tips, and guides on keyword research, SEO strategies, and digital marketing.\n\n## Featured Articles\n\nStay tuned for our latest blog posts on keyword research techniques, SEO best practices, and digital marketing trends.\n\n## About Our Blog\n\nThe Keyword Tool Blog is your go-to resource for mastering keyword research and SEO. We publish regular articles to help you grow your online presence and drive organic traffic."
         }
     ];
+
+// Helper function to get all articles
+function getAllArticles() {
+    return articlesDatabase;
+}
 
 // Helper function to get article by ID
 function getArticleById(id) {
